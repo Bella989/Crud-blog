@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos De Todos Os Tipos/Jogos</title>
+    <link rel="stylesheet" href="design.css">
+    <script src="./script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="cabecalho">
+        <div id="titulo"><h1> Criador de Posts </h1></div>
+            <button class="botao" onclick="newpost()">Novo Post</button>
+        <!--div id="divbusca">
+            <span class="material-icons lupa">search</span>
+            <form action="">
+                <input type="search" name="pesquisa-jogo" id="pesquisa" placeholder="Pesquise Aqui...">
+                <button type="submit" id="btnBusca">Pesquisar</button>
+            </form>
+        </div-->
+    </div>
+
+    <div id="principal">
+        <div class="post">
+            <a href=""><figure><img src="https://cdn.akamai.steamstatic.com/steam/apps/285920/header.jpg?t=1644900341"></figure></a>
+            <div class="tituloDescricao">
+                <a href="#">
+                <h2>Titulo</h2>
+                <p>Breve descrição do poste... Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, cumque ipsa. Sint adipisci id molestiae corporis a iste, optio provident, assumenda vel, aliquid excepturi eveniet. Laudantium tenetur quidem tempore pariatur.</p></a>
+            </div>
+            <div class="data">
+                25/08/2022
+            </div>
+        </div>
+    </div>
+
+    <div id="lateral">
+        <h3 class="titulolateral"> Top 10 </h3>
+        <div class="postlateral">
+            <a href="https://store.steampowered.com/app/621060/PC_Building_Simulator/"><figure><img src="https://image.api.playstation.com/vulcan/img/cfn/11307Ht1gn6n5zp13N4kJg_YwKg2rgJ-CzCKWTnz-XKXn31Agx-4N0DsdJxt7D3JJaJ8_hpOq-Q_I01-LLnEHikJhk0MrnPr.png" alt=""></figure></a>
+            <a href="https://store.steampowered.com/app/621060/PC_Building_Simulator/"><h3>PC Building Simulator</h3></a>
+        </div>
+    </div>
+    <nav id="rodape">
+        todos os direito reservados
+    </nav>
+
+    <form id="newPost" action="./function-calc.js" method="get">
+        <fieldset>
+            <legend>Cadastrar novo post</legend>
+            <input type="text" id="Titulo" placeholder="Titulo">
+            <input type="text" id="Descricao" placeholder="Descrição">
+            <input type="text" id="img" placeholder="Imagem">
+            <input type="text" id="Data" placeholder="Data">
+            <button type="button" onclick="enviar()">enviar</button>
+        </fieldset>
+    </form-->
+
+</body>
+</html>

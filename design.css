@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Saira Semi Condensed', sans-serif;
+}
+
+body {
+    background: fixed linear-gradient(#000 ,#43434d);
+    display: grid;
+    grid-template-areas: 
+    "cabecalho cabecalho"
+    "principal lateral"
+    "rodape rodape";
+    grid-template-rows: max-content 1fr max-content;
+    grid-template-columns: 1fr 20vw;
+}
+
+#cabecalho{
+    margin: 0 3vw;
+    grid-area: cabecalho;
+    color: aqua;
+    background-color: #00051b;
+    text-align: center;
+}
+
+/* Area superior do site */
+#titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 5px;
+    font-size: 2vw;
+    text-decoration: underline #004040;
+    margin: 5px 0 0;
+}
+
+/* Menu */
+.botao {
+    background-color: #092A5E;
+    padding: 2px 20px;
+    border-radius: 100px;
+    color: aqua;
+    border: 2px solid #fff;
+    margin: 2px 0 15px;
+    font-size: 2vw;
+}
+
+#newPost{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: #43434db0;
+    position: absolute;
+}
+#newPost fieldset{
+    color: aqua;
+    background-color: #000;
+    text-align: center;
+    margin: auto;
+    width: 70%;
+}
+
+/* Barra de pesquisa */
+#divbusca {
+    background-color: aliceblue;
+    border: solid 2px #092A5E;
+    border-radius: 7px;
+    height: 32px;
+    margin: 0.5vw;
+
+}
+
+#btnBusca {
+    border:none;
+    float:right;
+    height:32px;
+    width:70px;
+    font-weight:bold;
+    background:#092A5E;
+    color: aqua;
+}
+
+.lupa {
+    float: left;
+    transform: translate(0, 5px);
+    color:rgb(0, 7, 36)
+}
+
+#pesquisa {
+    float: left;
+    background-color:transparent;
+    padding-left:5px;
+    font-size:18px;
+    border:none;
+    height:32px;
+    width:80%;
+    font-family: 'Edu SA Beginner', cursive;
+    outline: 0;
+}
+
+/* Area do conteudo */
+#principal {
+    grid-area: principal;
+    color: aliceblue;
+    background-color: #000829;
+    text-align: center;
+    margin-left: 3vw;
+    min-height: 83vh;
+}
+
+/* Posts dos jogos */
+.post{
+    margin: 1.5% 1%;
+    background-color: #00000044;
+    border-radius: 5px;
+    width: 98%;
+    height: 20vw;
+    padding: 1% 1% 1.5%;
+    box-sizing: border-box;
+    text-align: left;
+    position: relative;
+}
+
+.post figure{
+    float: left;
+    height: 100%;
+    aspect-ratio: 6/3;
+    margin: 0.2vw 1vw 0 0;
+    overflow: hidden;
+}
+
+.post figure img{
+    height: 100%;
+    width: 100%;
+}
+
+.tituloDescricao {
+    position: relative;
+    font-size: 1.5vw;
+    height: 16.7vw;
+}
+
+.tituloDescricao h2 {
+    text-decoration: underline;
+} 
+
+.post a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.data {
+    border-top: 1px solid #7fffd4;
+    border-width: 1px 0 0;
+    color: #ffd700;
+    font-size: 1.5vw;
+}
+
+
+#lateral {
+    text-align: center;
+    grid-area: lateral;
+    background-color: #010c38;
+    margin-right: 3vw;
+    color: aliceblue;
+    border-left: 0.2vw #00041b solid;
+}
+
+#lateral figure {
+    width: 100%;
+    aspect-ratio: 6/5;
+}
+
+#lateral figure img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#lateral a{
+    margin-top: 3px;
+    margin-bottom: 15px;
+    color: aliceblue;
+    font-size: 1.5vw;
+    text-decoration: none;
+}
+
+.postlateral {
+    margin-bottom: 1vw;
+    background-color: rgba(127, 255, 249, 0.048);
+    padding: 1vw 0.9vw 0;
+    text-decoration: underline;
+}
+
+.titulolateral {
+    font-size: 2vw;
+    padding: 5px;
+}
+
+#rodape {
+    grid-area: rodape;
+    background-color: #00051b;
+    color: aliceblue;
+    text-align: center;
+    margin: 0 3vw;
+    padding: 1vw;
+    font-size: 20px;
+}
