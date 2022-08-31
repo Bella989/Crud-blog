@@ -5,7 +5,7 @@ function enviar(){
     var img = document.getElementById('img').value;
     var Data = document.getElementById('Data').value;
     viewPost();
-    if(img.lengh = 0){
+    if(img == ""){
         postTexto();
     } else{
         postImg();
@@ -25,7 +25,7 @@ function criarPost(Post){
     //criar post com imagem
 function postImg(){
     let Post = document.createElement("div");
-    Post.setAttribute("class", "postImg")
+    Post.setAttribute("class", "postImg post")
 
     let Figure = document.createElement("figure")
     let Imagem = document.createElement("img")
@@ -63,7 +63,7 @@ function postImg(){
     //criar post apenas de texto
 function postTexto(){
     let Post = document.createElement("div");
-    Post.setAttribute("class", "postImg")
+    Post.setAttribute("class", "postText post")
 
     let areaTexto = document.createElement("div")
     areaTexto.setAttribute("class", "tituloDescricao")
