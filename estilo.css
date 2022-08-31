@@ -133,6 +133,6 @@ body {
     text-align: center;
     padding: 1vw;
     font-size: 20px;
-    position: absolute;
+    position: static;
     bottom: 0;
 }
