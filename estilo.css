@@ -128,47 +128,6 @@ body {
     font-size: 1.7vW;
 }
 
-/*
-#lateral {
-    text-align: center;
-    background-color: #010c38;
-    margin-right: 3vw;
-    color: aliceblue;
-    border-left: 0.2vw #00041b solid;
-}
-
-#lateral figure {
-    width: 100%;
-    aspect-ratio: 6/5;
-}
-
-#lateral figure img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
-#lateral a{
-    margin-top: 3px;
-    margin-bottom: 15px;
-    color: aliceblue;
-    font-size: 1.5vw;
-    text-decoration: none;
-}
-
-.postImglateral {
-    margin-bottom: 1vw;
-    background-color: rgba(127, 255, 249, 0.048);
-    padding: 1vw 0.9vw 0;
-    text-decoration: underline;
-}
-
-.titulolateral {
-    font-size: 2vw;
-    padding: 5px;
-}
-*/
-
 #rodape {
     background-color: #00051b;
     color: aliceblue;
