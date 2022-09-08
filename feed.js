@@ -1,88 +1,51 @@
+var posts=[
+    {"titulo":"Titulo","data":"22/08/2013", "img":"https://devporai.com.br/wp-content/uploads/2021/01/O-que-e-CRUD-740x414.jpg","text":"Breve descrição do post... Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, cumque ipsa. Sint adipisci id molestiae corporis a iste, optio provident, assumenda vel, aliquid excepturi eveniet. Laudantium tenetur quidem tempore pariatur."},
+    {"titulo":"Titulo","data":"22/08/2013","img":"" ,"text":"Descrição do post... Habitasse aenean curabitur convallis quisque quam turpis porttitor, orci donec mi turpis lacinia scelerisque elementum aliquam, maecenas tempor rutrum conubia dolor tortor. ac habitasse quisque himenaeos platea praesent class mollis, leo habitant inceptos id vivamus sem sociosqu, hendrerit facilisis bibendum nec aenean ligula. purus luctus metus lacinia gravida sed fames cubilia fusce, posuere fames libero leo at praesent non eget turpis, laoreet tempus habitant cras ut volutpat dapibus. hac himenaeos euismod dictum nostra a lorem imperdiet feugiat, fringilla nisi maecenas aenean leo placerat luctus nec porttitor, luctus turpis mattis himenaeos fermentum rhoncus viverra."}
+    ];
+    var feedContent = "";
+    //atualizaFeed();
+
+function addPost (Titulo,Data,Img,Text){
+    viewPost();
+    posts.unshift({"titulo":Titulo,"data":Data,"img":Img, "text":Text});
+    console.log (posts);
+    atualizaFeed();
+}
 // Recebimento do formulario
 function enviar(){
     var Titulo = document.getElementById('Titulo').value;
-    var Descricao = document.getElementById('Descricao').value;
-    var img = document.getElementById('img').value;
     var Data = document.getElementById('Data').value;
-    viewPost();
-    if(img == ""){
-        postTexto();
-    } else{
-        postImg();
-    }
-    console.log (img);
+    var Img = document.getElementById('Img').value;
+    var Text = document.getElementById('Text').value;
+    addPost(Titulo,Data,Img,Text);
 }
 
-function criarPost(Post){
-    let feed = document.getElementById('feed')
-    let posts = document.getElementsByClassName('post');
-    
 
-    feed.insertBefore(Post , posts[0]);
+
+function atualizaFeed(){
+    let feed = document.getElementById('feed')
+    for(let i=0; i<posts.length;i++){
+        criadorPost(i);
+    }
+    feed.innerHTML = feedContent;
+    feedContent = "";
+}
+
+function criadorPost (i){
+    if(posts[i].img == ""){
+        postTexto(i);
+    } else{
+        postImg(i);
+    }
 }
 
 // Criação de posts
     //criar post com imagem
-function postImg(){
-    let Post = document.createElement("div");
-    Post.setAttribute("class", "postImg post")
-
-    let Figure = document.createElement("figure")
-    let Imagem = document.createElement("img")
-    Imagem.setAttribute("src", img.value)
-
-    let areaTexto = document.createElement("div")
-    areaTexto.setAttribute("class", "tituloDescricao")
-    let tituloPost = document.createElement("h2")
-    tituloPost.textContent = Titulo.value
-    let DescriçãoPost = document.createElement("p")
-    DescriçãoPost.textContent =  Descricao.value
-
-    let Date = document.createElement("div")
-    Date.setAttribute("class", "data")
-    Date.textContent = Data.value;
-
-    let linkTexto  = document.createElement("a")
-    linkTexto.setAttribute("href", "#")
-
-    let linkImagem = document.createElement("a")
-    linkImagem.setAttribute("href", "#")
-
-    Post.appendChild(linkImagem);
-    linkImagem.appendChild(Figure)
-    Figure.appendChild(Imagem);
-
-    Post.appendChild(areaTexto);
-    areaTexto.appendChild(linkTexto)
-    linkTexto.appendChild(tituloPost)
-    linkTexto.appendChild(DescriçãoPost)
-    Post.appendChild(Date)
-    criarPost(Post);
+function postImg(i){
+    feedContent += '<div class="postImg post"> <a href="#"><figure><img src='+posts[i].img+'></figure></a> <div class="tituloDescricao"> <a href="#"><h2>'+posts[i].titulo+'</h2><p>'+posts[i].text+'</p></a> </div> <div class="data">'+posts[i].data+'</div></div>'
 }
 
     //criar post apenas de texto
-function postTexto(){
-    let Post = document.createElement("div");
-    Post.setAttribute("class", "postText post")
-
-    let areaTexto = document.createElement("div")
-    areaTexto.setAttribute("class", "tituloDescricao")
-    let tituloPost = document.createElement("h2")
-    tituloPost.textContent = Titulo.value
-    let DescriçãoPost = document.createElement("p")
-    DescriçãoPost.textContent =  Descricao.value
-
-    let Date = document.createElement("div")
-    Date.setAttribute("class", "data")
-    Date.textContent = Data.value;
-
-    let linkTexto  = document.createElement("a")
-    linkTexto.setAttribute("href", "#")
-
-    Post.appendChild(areaTexto);
-    areaTexto.appendChild(linkTexto)
-    linkTexto.appendChild(tituloPost)
-    linkTexto.appendChild(DescriçãoPost)
-    Post.appendChild(Date)
-    criarPost(Post);
+function postTexto(i){
+    feedContent += '<div class="postText post"><div class="tituloDescricao"><a href="#"><h2>'+posts[i].titulo+'</h2><p>'+posts[i].text+'</p></a></div><div class="data">'+posts[i].data+'</div></div>'
 }
